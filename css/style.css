@@ -147,7 +147,10 @@
     }
 
     .hero h1 span {
-        color: var(--gold);
+        background: linear-gradient(90deg, var(--gold), #ffe0a0);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
     }
 
     .hero .lead {
@@ -222,8 +225,17 @@
     .stats {
         margin-top: 3rem;
         display: flex;
-        gap: 2.5rem;
+        gap: 1rem;
         flex-wrap: wrap;
+    }
+
+    .stats>div {
+        background: rgba(255, 255, 255, .07);
+        border: 1px solid rgba(255, 255, 255, .14);
+        border-radius: 14px;
+        padding: .9rem 1.3rem;
+        backdrop-filter: blur(6px);
+        min-width: 110px;
     }
 
     .stats strong {
@@ -638,6 +650,270 @@
         padding: 1.4rem 0;
         border-top: 1px solid rgba(255, 255, 255, .1);
         font-size: .9rem;
+    }
+
+
+    /* ========== EXTRA POLISH ========== */
+    #progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 4px;
+        width: 0;
+        z-index: 2000;
+        background: linear-gradient(90deg, var(--teal), var(--gold));
+    }
+
+    .site-header .nav-link.active {
+        background: var(--navy);
+        color: #fff;
+    }
+
+    .hero {
+        padding-bottom: 9rem;
+    }
+
+    .wave {
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 100%;
+        height: 80px;
+        display: block;
+    }
+
+    .wave path {
+        fill: var(--bg);
+    }
+
+    .role {
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: #e9eefb;
+        margin: 1.2rem 0 0;
+        min-height: 2rem;
+    }
+
+    .role #typed {
+        color: var(--teal);
+        font-weight: 700;
+    }
+
+    .caret {
+        display: inline-block;
+        width: 2px;
+        height: 1.2em;
+        background: var(--gold);
+        margin-left: 3px;
+        vertical-align: text-bottom;
+        animation: blink 1s steps(1) infinite;
+    }
+
+    @keyframes blink {
+        50% {
+            opacity: 0;
+        }
+    }
+
+    .hero .lead {
+        margin-top: .75rem;
+    }
+
+    .chip {
+        position: absolute;
+        width: 56px;
+        height: 56px;
+        display: grid;
+        place-items: center;
+        font-size: 1.7rem;
+        color: #fff;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, .12);
+        border: 1px solid rgba(255, 255, 255, .25);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
+        animation: floaty 6s ease-in-out infinite;
+    }
+
+    .chip.c1 {
+        top: -10px;
+        left: -30px;
+        color: #ff7a4d;
+    }
+
+    .chip.c2 {
+        top: 30px;
+        right: -40px;
+        color: #6f9bff;
+        animation-delay: -2s;
+    }
+
+    .chip.c3 {
+        bottom: 10px;
+        left: -44px;
+        color: #b894f5;
+        animation-delay: -4s;
+    }
+
+    .chip.c4 {
+        bottom: -18px;
+        right: -6px;
+        color: var(--gold);
+        animation-delay: -1s;
+    }
+
+    @keyframes floaty {
+        50% {
+            transform: translateY(-12px);
+        }
+    }
+
+    .section-head h2 {
+        background: linear-gradient(90deg, var(--navy), var(--navy-2));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .info-card,
+    .cv-box,
+    .skill-card,
+    .form-card {
+        box-shadow: 0 8px 28px rgba(11, 21, 48, .06);
+    }
+
+    .project .thumb {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .project .thumb::before {
+        content: "";
+        position: absolute;
+        top: 16px;
+        left: 18px;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, .75);
+        box-shadow: 16px 0 rgba(255, 255, 255, .5), 32px 0 rgba(255, 255, 255, .3);
+    }
+
+    .project .thumb::after {
+        content: "";
+        position: absolute;
+        right: -50px;
+        bottom: -70px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, .14);
+    }
+
+    .project .thumb i {
+        position: relative;
+        z-index: 1;
+        transition: transform .3s;
+    }
+
+    .project:hover .thumb i {
+        transform: scale(1.15) rotate(-4deg);
+    }
+
+    .project:hover {
+        border-color: var(--teal);
+    }
+
+    .skill-card:hover {
+        border-color: var(--teal);
+    }
+
+    .site-footer {
+        position: relative;
+        overflow: hidden;
+        background: radial-gradient(circle at 8% 0%, rgba(18, 181, 166, .2), transparent 40%), radial-gradient(circle at 95% 100%, rgba(244, 185, 66, .12), transparent 35%), var(--navy);
+    }
+
+    .to-top {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: var(--teal);
+        color: #fff;
+        font-size: 1.3rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, .25);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(10px);
+        transition: .3s;
+        z-index: 1500;
+    }
+
+    .to-top.show {
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+    }
+
+    .to-top:hover {
+        background: var(--gold);
+        color: var(--navy);
+    }
+
+    .js .progress-bar {
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 1.2s cubic-bezier(.2, .7, .2, 1) .2s;
+    }
+
+    .js .reveal.in .progress-bar {
+        transform: scaleX(1);
+    }
+
+    .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.in {
+        opacity: 1;
+        transform: none;
+    }
+
+    @media (max-width: 991px) {
+        .chip.c1 {
+            left: 0;
+        }
+
+        .chip.c2 {
+            right: 0;
+        }
+
+        .chip.c3 {
+            left: 0;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .js .progress-bar {
+            transform: none;
+        }
+
+        .reveal {
+            opacity: 1;
+            transform: none;
+        }
+
+        .chip,
+        .caret {
+            animation: none;
+        }
     }
 
     a:focus-visible,
