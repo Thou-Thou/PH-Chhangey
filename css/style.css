@@ -287,11 +287,11 @@
 
     /* ========== SKILLS ========== */
     #skills {
-        background: #fff;
+        background: var(--bg);
     }
 
     .skill-card {
-        background: var(--bg);
+        background: #fff;
         border: 1px solid var(--line);
         border-radius: 16px;
         padding: 1.75rem;
@@ -404,6 +404,139 @@
 
     .project .links a:hover {
         color: var(--teal-dark);
+    }
+
+
+    /* ========== RESUME / CV ========== */
+    #resume {
+        background: #fff;
+    }
+
+    .cv-col h3 {
+        font-size: 1.3rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: .75rem;
+    }
+
+    .cv-col h3 i {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        background: var(--navy);
+        color: var(--gold);
+        font-size: 1.2rem;
+    }
+
+    .timeline {
+        position: relative;
+        padding-left: 1.75rem;
+        border-left: 2px solid var(--line);
+    }
+
+    .t-item {
+        position: relative;
+        margin-bottom: 1.75rem;
+    }
+
+    .t-item::before {
+        content: "";
+        position: absolute;
+        left: calc(-1.75rem - 7px);
+        top: .45rem;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--teal);
+        border: 3px solid #fff;
+        box-shadow: 0 0 0 2px var(--teal);
+    }
+
+    .t-item .date {
+        display: inline-block;
+        font-size: .82rem;
+        font-weight: 700;
+        color: var(--teal-dark);
+        background: #e7f7f5;
+        border-radius: 6px;
+        padding: .1rem .6rem;
+        margin-bottom: .35rem;
+    }
+
+    .t-item h4 {
+        font-size: 1.05rem;
+        font-weight: 700;
+        margin: 0;
+    }
+
+    .t-item .where {
+        color: var(--muted);
+        font-size: .93rem;
+        margin-bottom: .3rem;
+    }
+
+    .t-item p {
+        font-size: .95rem;
+        color: var(--muted);
+        margin: 0;
+    }
+
+    .cv-box {
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 1.5rem;
+        height: 100%;
+    }
+
+    .cv-box h4 {
+        font-size: 1.05rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .cv-box h4 i {
+        color: var(--teal);
+        margin-right: .5rem;
+    }
+
+    .cv-box ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .cv-box li {
+        display: flex;
+        justify-content: space-between;
+        padding: .45rem 0;
+        border-bottom: 1px dashed var(--line);
+        font-size: .95rem;
+    }
+
+    .cv-box li:last-child {
+        border: 0;
+    }
+
+    .cv-box li span:last-child {
+        color: var(--muted);
+    }
+
+    .btn-cv {
+        background: var(--navy);
+        color: #fff;
+        border-radius: 10px;
+        padding: .8rem 1.8rem;
+        font-weight: 700;
+    }
+
+    .btn-cv:hover {
+        background: var(--teal-dark);
+        color: #fff;
     }
 
     /* ========== CONTACT ========== */
